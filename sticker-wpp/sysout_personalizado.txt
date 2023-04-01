@@ -1,0 +1,23 @@
+System.out.println(" \u001b[1m URL:\u001b[m " + filme.get("image"));
+
+System.out.println(" \u001b[1m Título:\u001b[m " + filme.get("title"));
+
+System.out.print( ANSI_CIANO_FUNDO + " \u001b[1m Classificação:\u001b[m " + ANSI_RESET + filme.get("imDbRating"));
+
+
+final String ANSI_CIANO_FUNDO = "\u001B[46m";
+final String ANSI_RESET = "\u001B[0m";
+
+System.out.println(ANSI_YELLOW+ "This text is yellow"+ ANSI_RESET);
+
+Double classificacao = Double.parseDouble(filme.get("imDbRating"));
+
+int estrela = (int) Math.round(classificacao);
+
+for (int n = 1; n <= estrela; n++) {
+
+    System.out.print("⭐");
+        
+}
+
+System.out.println("\n");
