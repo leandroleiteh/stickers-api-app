@@ -1,0 +1,1 @@
+spring.data.mongodb.uri=mongodb+srv://leandroluz201616:<6652>@cluster0.auzpnij.mongodb.net/principaisLinguagens?retryWrites=true&w=majority

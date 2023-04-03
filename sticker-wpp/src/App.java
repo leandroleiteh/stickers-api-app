@@ -6,9 +6,10 @@ public class App {
 
     public static void main(String[] args) throws Exception {
 
-        API api = API.IMDB_TOP_SERIES;
+        API api = API.LINGUAGEM;
 
         String url = api.getUrl();
+       
         ExtratorDeConteudo extrator = api.getExtrator();
 
         var http = new ClienteHttp();
@@ -19,12 +20,12 @@ public class App {
 
         var geradora = new GeradoraDeFigurinhas();
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
 
             Conteudo conteudo = conteudos.get(i);
 
             InputStream inputStream = new URL(conteudo.urlImagem()).openStream();
-            String nomeArquivo = "saida/" + conteudo.titulo() + ".png";
+            String nomeArquivo = conteudo.titulo() + ".png" ;
 
             geradora.cria(inputStream, nomeArquivo);
 

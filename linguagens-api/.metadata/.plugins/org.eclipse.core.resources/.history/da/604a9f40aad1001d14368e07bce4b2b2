@@ -1,0 +1,9 @@
+spring.data.mongodb.uri=ConnectionString connectionString = new ConnectionString("mongodb+srv://leandroluz201616:6652@cluster0.auzpnij.mongodb.net/liguagensDb?retryWrites=true&w=majority");
+MongoClientSettings settings = MongoClientSettings.builder()
+        .applyConnectionString(connectionString)
+        .serverApi(ServerApi.builder()
+            .version(ServerApiVersion.V1)
+            .build())
+        .build();
+MongoClient mongoClient = MongoClients.create(settings);
+MongoDatabase database = mongoClient.getDatabase("test");
